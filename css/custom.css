@@ -1,0 +1,35 @@
+.grid-item {
+	height: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.center {
+	line-height: 50px;
+}
+
+.selected {}
+.selected:hover, .sw-removed, .hw-removed {
+	background-color: #9f9691 !important; 
+}
+.removed {
+	background-color: #7f7874 !important;
+}
+
+/* Green */
+.sw {
+	background-color: #8ec127;
+	border: 0px !important;
+}
+
+/* Red */
+.hw {
+	background-color: #d41243;
+	border: 0px !important;
+}
+
+/* Blue */
+.theory {
+	background-color: #00aedb;
+	border: 0px !important;
+}
