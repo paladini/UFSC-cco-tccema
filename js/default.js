@@ -155,7 +155,7 @@ $(document).ready(function(){
 		for(var j = 0; j < courses_per_row; j = j + 1) {
 			if (aux < courses.length) {
 				var grid_item = document.createElement('div');
-				grid_item.className = "grid-item four columns selected " + courses[aux]["topic"];
+				grid_item.className = "grid-item four columns removed " + courses[aux]["topic"];
 				grid_item.dataset.tag = courses[aux]["topic"];
 				grid_item.innerHTML = "<span class=\"center\">" + courses[aux]["name"] + "</span>";
 				aux = aux + 1;
@@ -167,48 +167,32 @@ $(document).ready(function(){
 	}
 
 	$('.selected').on('click', function(e) {
-		e.preventDefault();
-		if ($(this).hasClass('button-primary')) {
-			var tag = $(this).data('tag');
-			var etag = $('.' + tag);
-
-			$(this).toggleClass(tag + '-removed ' + tag);
-			if ($(this).hasClass('removed')){
-				etag.removeClass('removed');
-				etag.addClass('selected');
-			} else {
-				etag.removeClass('selected');
-				etag.addClass('removed');
-			}
-
-		} else {
-			$(this).toggleClass('selected removed');
-		}
+		$(this).toggleClass('selected removed');
 	});
 
 	$('.removed').on('click', function(){
 		$(this).toggleClass('selected removed');
 	});
 
-	// $('.button-primary').on('click', function(e){
-	// 	e.preventDefault();
-	// 	var etag = $('.' + $(this).data('tag'));
-	// 	// if (etag.hasClass('selected')) {
-	// 	// 	etag.removeClass('selected');
-	// 	// 	etag.addClass('removed');
-	// 	// } else {
-	// 	// 	etag.removeClass('removed');
-	// 	// 	etag.addClass('selected');
-	// 	// }
-	// 	// etag.toggleClass('selected removed');
-	// 	$(this).toggleClass('selected removed');
+	$('.button-tag').on('click', function(e){
+		e.preventDefault();
+		var etag = $('.' + $(this).data('tag'));
+		// if (etag.hasClass('selected')) {
+		// 	etag.removeClass('selected');
+		// 	etag.addClass('removed');
+		// } else {
+		// 	etag.removeClass('removed');
+		// 	etag.addClass('selected');
+		// }
+		// etag.toggleClass('selected removed');
+		$(this).toggleClass('selected removed');
 
-	// 	if ($(this).hasClass('removed')){
-	// 		etag.removeClass('removed');
-	// 		etag.addClass('selected');
-	// 	} else {
-	// 		etag.removeClass('selected');
-	// 		etag.addClass('removed');
-	// 	}
-	// })
+		if ($(this).hasClass('removed')){
+			etag.removeClass('removed');
+			etag.addClass('selected');
+		} else {
+			etag.removeClass('selected');
+			etag.addClass('removed');
+		}
+	})
 });

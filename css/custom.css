@@ -8,28 +8,49 @@
 	line-height: 50px;
 }
 
-.selected {}
-.selected:hover, .sw-removed, .hw-removed {
-	background-color: #9f9691 !important; 
+.selected, .removed {
+	-webkit-appearance: button;
+	cursor: pointer;
 }
-.removed {
-	background-color: #7f7874 !important;
+
+.removed { background-color: #7f7874 !important; }
+.removed:hover { background-color: #9f9691 !important; }
+
+/* Tags */
+.button-tag {
+	height: 38px;
+	margin: 0 5px 0px 0px;
+	padding: 0 20px;
+	font-size: 11px;
+	font-weight: 600;
+	line-height: 38px;
+	letter-spacing: .1rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	border-radius: 4px;
+	color: #FFF;
+	display: inline-block;
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.button-tag:hover {
+	color: #FFF;
+	background-color: #9f9691 !important;
 }
 
 /* Green */
-.sw {
-	background-color: #8ec127;
-	border: 0px !important;
-}
+.sw { background-color: #8ec127; }
 
 /* Red */
-.hw {
-	background-color: #d41243;
-	border: 0px !important;
-}
+.hw { background-color: #d41243; }
 
 /* Blue */
-.theory {
-	background-color: #00aedb;
-	border: 0px !important;
-}
+.theory { background-color: #00aedb; }
+
+/* Orange */
+.math { background-color: #F47835; }
+
+/* Purple */
+.misc { background-color: #a200ff; }
